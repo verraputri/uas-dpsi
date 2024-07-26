@@ -1,0 +1,211 @@
+{
+    "info": {
+      "name": "API Collection",
+      "_postman_id": "abc123-xyz456-789def",
+      "description": "Collection for testing the API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Register",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"password123\"\n}"
+          },
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/register",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", "register"]
+          }
+        }
+      },
+      {
+        "name": "Login",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"password123\"\n}"
+          },
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/login",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", "login"]
+          }
+        }
+      },
+      {
+        "name": "Get Sensor Data",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }
+          ],
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", ""]
+          }
+        }
+      },
+      {
+        "name": "Filter Sensor Data",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"tgl_mulai\": \"2022-01-01\",\n  \"tgl_akhir\": \"2022-12-31\",\n  \"sumber\": \"source1\"\n}"
+          },
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", ""]
+          }
+        }
+      },
+      {
+        "name": "Get Pump Data",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }
+          ],
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/pompa",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", "pompa"]
+          }
+        }
+      },
+      {
+        "name": "Control Pump",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"pompa\": \"ON\"\n}"
+          },
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/pompa",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", "pompa"]
+          }
+        }
+      },
+      {
+        "name": "Publish Message to Topic",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }
+          ],
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/publish/:topic/:message",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", "publish", ":topic", ":message"],
+            "variable": [
+              {
+                "key": "topic",
+                "value": "your_topic"
+              },
+              {
+                "key": "message",
+                "value": "your_message"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Publish Data to Topic",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{token}}"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"key\": \"value\"\n}"
+          },
+          "url": {
+            "raw": "http://103.127.135.149:3333/api/publish/:topic",
+            "protocol": "http",
+            "host": ["103.127.135.149"],
+            "port": "3333",
+            "path": ["api", "publish", ":topic"],
+            "variable": [
+              {
+                "key": "topic",
+                "value": "your_topic"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+  
